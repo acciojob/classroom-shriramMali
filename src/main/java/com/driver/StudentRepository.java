@@ -12,6 +12,8 @@ public class StudentRepository {
 
 
     public StudentRepository(){
+
+        super();
         this.studentMap = new HashMap<String, Student>();
         this.teacherMap = new HashMap<String, Teacher>();
         this.teacherStudentMapping = new HashMap<String, List<String>>();
