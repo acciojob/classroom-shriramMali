@@ -1,5 +1,7 @@
 package com.driver;
 import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Repository;
 
@@ -31,7 +33,7 @@ public class StudentRepository {
        if(teacherMap.containsKey(teacher) && studentMap.containsKey(student) ){
            List<String> current=new ArrayList<>();
 
-           if(teacherStudentMapping.containsKey(student))
+           if(teacherStudentMapping.containsKey(teacher))
            current=teacherStudentMapping.get(teacher);
 
            current.add(student);
@@ -42,11 +44,20 @@ public class StudentRepository {
     }
 
    public Student findStudent(String student){
-   return studentMap.get(student);
+        Student student1=null;
+        if(studentMap.containsKey(student)){
+            return studentMap.get(student);
+        }
+   return student1;
    }
 
     public Teacher findTeacher(String teacher){
-        return teacherMap.get(teacher);
+        Teacher teacher1=null;
+        if(teacherMap.containsKey(teacher)){
+            return teacherMap.get(teacher);
+        }
+
+        return teacher1;
     }
   public List<String> findteacherStudent(String teacher){
   List<String> allStudent=new ArrayList<>();
