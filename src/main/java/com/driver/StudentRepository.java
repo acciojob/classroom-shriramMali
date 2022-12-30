@@ -29,7 +29,7 @@ public class StudentRepository {
        if(teacherMap.containsKey(teacher) && studentMap.containsKey(student) ){
            List<String> current=new ArrayList<>();
 
-           if(teacherStudentMapping.containsKey(current))
+           if(teacherStudentMapping.containsKey(student))
            current=teacherStudentMapping.get(teacher);
 
            current.add(student);
